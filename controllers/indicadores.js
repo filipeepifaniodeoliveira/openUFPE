@@ -128,7 +128,7 @@ function pegarDadosSI () {
           method: 'POST',
           data: {
 
-        "datasetName":"aluno_CC", 
+        "datasetName":"aluno_02", 
         "format":"json",
         "where":
         { 

@@ -2,7 +2,7 @@
 <html lang="en" ng-app="openacademy">
 <head>
   <meta charset="UTF-8">
-  <title>ngRoute</title>
+  <title>OpenAcademyUFPE</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="script.js"></script>
@@ -25,6 +25,9 @@
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/morris.css" rel="stylesheet">
     <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/indicadores.css" rel="stylesheet">
+    <link href="css/gerador.css" rel="stylesheet">
+
 
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -62,11 +65,14 @@
                         <li><a ui-sref="consultas">Consultas</a></li>
                     </li>
                     <li>
+                        <li><a ui-sref="downloads">Conjunto de Dados</a></li>
+                    </li>
+                    <li>
                        <li><a ui-sref="indicadores">Indicadores</a></li>
                     </li>
                     <li>
-                        <li><a ui-sref="downloads">Conjunto de Dados</a></li>
-                      </li>
+                        <li><a ui-sref="gerador">Gerador de Datasets</a></li>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

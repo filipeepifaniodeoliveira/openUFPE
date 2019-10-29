@@ -6,8 +6,12 @@ app.controller('consultasCtrl', function($scope, $http) {
 			"datasetName":"pessoa"
 		},
 		{
-			"nome": "Alunos",
-			"datasetName":"aluno"
+			"nome": "Alunos 01",
+			"datasetName":"aluno_SI"
+		},
+		{
+			"nome": "Alunos 02",
+			"datasetName":"aluno_CC"
 		},
 		{
 			"nome": "Docentes",

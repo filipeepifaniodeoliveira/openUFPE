@@ -1,0 +1,22 @@
+{
+	"usuario":"admin",
+	"senha":"password"
+}
+
+{
+	"codigo":"c1de9754713d94888ee2b8c777e25cb0",
+	"datasetTitle":"aluno_02",
+	"collectionIdColumnName":"codg_seqcl_disct",
+	"sqlQuery":, 
+	"updateFrequency":"0",
+	"creator":"Wilker Santos",
+	"keywords":"segurança,automação",
+	"publisher":"Cin - UFPE",
+	"contactPoint":"cin@cin.ufpe.br",
+	"period":"Todo o ano de 2016",
+	"spacialCoverage":"Recife, Brasil",
+	"theme":"Segurança",
+	"language":"Portuguese",
+	"dateTimeFormats":"ISO 8601",
+	"description":"Conjunto de dados que mostra os alunos da UFPE."
+}

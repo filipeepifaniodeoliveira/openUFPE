@@ -1,125 +1,176 @@
+<div class="row">
+        <div class="col-lg-12">
 
-  function pegarDados () {
-    console.log('chamou o pegar dados');
+        <div class="panel panel-default">
+              <div class="panel-heading">
+                  Gerador de Serial
+              </div>  
+            <div class="panel-body">
+            <div class="row">
+                    <!-- TABELA -->
+                    <table class="table table-striped">
+                      <tr>
+                            <td>Usuário</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">   
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Senha</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+                
+                        <div id="resposta">
+              <td>Resposta do Login</td>
+                        </div>
 
-    jQuery.ajax(
+                    </table>
+                </div>
+            </div>
+        </div>    
+        
+            </div>
+        </div>
 
-    {
-
-          url : 'http://localhost:8080/find/execute/query',
-
-          type: 'POST',
-
-          dataType : "json",
-
-          data: {
-              "datasetName":"orgao", 
-              "format":"json",
-              "where": { 
-                "codg_orgao_sup":"54"
-              }
-          },
-
-          success:function(data) { alert(data); },
-
-          error: function() {alert(data); }
-
-          }
-
-    );
-
-
-
-
-    //grafico
-  $scope.labels = ['2008', '2007', '2008', '2009', '2010', '2011', '2012'];
-  $scope.series = ['Numero de repovacoes no ultimo semestre', 'numero de reprovacoes da disciplina'];
-  $scope.data = [
-    [65, 59, 80, 81, 56, 55, 40],
-    [200, 48, 40, 19, 86, 27, 90]
-  ];
-  
-  // posts
-  $scope.posts = [];
-
-  $scope.requisicao = function (select) {
-    console.log(select);
-    switch (select.tipo) {
-      case "curso":
-        pegarCursos();
-        break;
-      default:
-
-    }
-  }
+        </tr>
+        </tr>
 
 
-
-
-
-
-
-
-
-    app.controller('indicadoresCtrl', chartController);
-
-chartController.$inject = ['$scope', '$http'];
-
-function chartController ($scope, $http) {
-
-    //grafico
-    //$scope.labels = ['2008', '2007', '2008', '2009', '2010', '2011', '2012'];
-    //$scope.series = ['Numero de repovacoes no ultimo semestre', 'numero de reprovacoes da disciplina'];
-    //$scope.data = [
-    //[65, 59, 80, 81, 56, 55, 40],
-    //[200, 48, 40, 19, 86, 27, 90]
-    //];
-  
-
-    $http({
-          url: 'http://localhost:8080/find/execute/query',
-          method: 'POST',
-          data: {
-              "datasetName":"orgao", 
-              "format":"json",
-              "where": { 
-                "codg_orgao_sup":"54"
-              }
-          },
-          headers: {
-            'Content-Type': 'application/json'            
-          }
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  Preenchimento do Conjunto de Dados
+              </div>
           
-        }).then(function successCallback(res) {
-          $scope.indicadores = res.data;
-          console.log(res.data);
+            <div class="panel-body">
+              <div class="row">
+                    <!-- TABELA -->
+                    <table class="table table-striped">
+                        <!--
+                        <tr>
+                            <td>Select</td>
+                            <td>Valor</td>
+                        </tr>
+                        -->
+                        <tr>
+                            <td>Código</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">   
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>DatasetTitle</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CollectionIdColumnName</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>SQL</td>
+                            <td>
+                                <textarea class="form-control" rows="10" id="comment"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+            </div>  
 
-         // var dados   = res.data;
-         // var cursos  = [];
-         // var mediaCursos = 0;
+            <div class="row">
 
-          //
-         // for (var i = 0; i < dados.length; i++) {
-          //
-         // if (dados.tipo == "curso") {
-         // cursos.push(dados.tipo);
-         // mediaCursos ++;
-       // }
-      //
-       //}
-      //
-      // $scope.cursos = cursos;
+                    <!-- TABELA -->
+                    <table class="table table-striped">
+                       
+                        <tr>
+                            <td>UpdateFrequency</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">   
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Creator</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>keywords</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Publisher</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
 
-    }, function errorCallback(res) {
-      console.log('deu erro');
-    });
+                        <tr>
+                            <td>ContactPoint</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
 
-  }
+                        <tr>
+                            <td>Period</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
 
-  $scope.pegarDados = pegarDados;
+                        <tr>
+                            <td>SpacialCoverage</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
 
-}
+                        <tr>
+                            <td>Theme</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Language</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>DateTimeFormats</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Description</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
 
 
 
- 
+                    </table>
+                </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+
