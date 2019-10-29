@@ -3,82 +3,233 @@
 <ul class="container-fluid">
 <div class="row">
 <div class="col-lg-12">
-        <h1 class="page-header">Consultas</h1>
-    <!-- /.col-lg-12 -->
+    <h3 class="page-header">Consultas</h3>
 </div>
 
 
 <div class="row">
     <div class="col-lg-12">
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 Realize sua consulta selecionando os itens dos datasets
+        
+            <div class="btn-group btn-group-justified" role="group" class="pull-right">
+                    <div class="btn-group" role="group">
+            
+                    <button type="button" class="pull-right" class="btn btn-default" ng-click="buscar(data)">Buscar</button>
+                    <button type="button" class="pull-right" class="btn btn-default" ng-click="data={};download.show=false">Limpar</button>
+            
+                    </div>    
             </div>
 
             <div class="panel-body">
+                <!--selects -->
                 <div class="row">
-                    <div class="col-lg-12">
+                    <table class="table table-striped">
+                        <tr>
+                            <td>Datasets</td>
+                            <td>Formatos</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control" ng-model="data.datasetName" ng-change="data.where=''">
+                                    <option ng-repeat="base in datasets" value="{{base.datasetName}}">{{base.nome}}</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" ng-model="data.format">
+                                    <option ng-repeat="formato in formatos" value="{{formato.format}}">{{formato.nome}}</option>
+                                </select>
+                            </td>
+                        </tr>   
+                    </table>                    
+                </div>    
 
-<!--
-                        <div class="container" ng-controller="FormCtrl">
-                          <form name="FormContato" ng-submit="salveSubmit()">
-                          <div class="form-group" id="formId">
+                <div class="row">
 
-
-                                            <h4>Selecione os datasets:</h4>
-                                            <select name="selectedDatasets" ng-model="user.selectedDatasets" ng-options="x for (x, y) in datasets">
-                                            </select>
-
-                                            <h4>Selecione os formatos:</h4>
-                                            <select name="selectedFormatos" ng-model="user.selectedFormatos"  ng-options="x for (x, y) in formatos">
-                                            </select>
-
-                                            <h4>Selecione a versão:</h4>
-                                            <select name="selectedVersao" ng-model="user.selectedVersao" ng-options="x for (x, y) in versao">
-                                            </select>
-
-                                            <div>
-                                            <h4>Itens dos dataset:</h4>
-                                            <select id="country" ng-model="states" ng-options="country for (country, states) in countries">
-                                            <option value=''></option>
-                                            </select>
-                                            <select id="state" ng-disabled="!states" name="cities" ng-model="user.cities" ng-options="state for (state,cities) in states"><option value=''></option></select>
-                                            </div>
-
-                                            <div>
-                                            <h4>Itens dos dataset:</h4>
-                                            <select id="country2" ng-model="states2" ng-options="country2 for (country2, states2) in countries1">
-                                            <option value=''></option>
-                                            </select>
-                                            <select id="state2" ng-disabled="!states2" name="cities2" ng-model="user.cities2" ng-options="state2 for (state2,cities2) in states2"><option value=''></option></select>
-                                            </div>
-
-                                            <div>
-                                            <h4>Itens dos dataset:</h4>
-                                            <select id="country3" ng-model="states3" ng-options="country3 for (country3, states3) in countries2">
-                                            <option value=''></option>
-                                            </select>
-                                            <select id="state3" ng-disabled="!states3" name="cities3" ng-model="user.cities3" ng-options="state3 for (state3,cities3) in states3"><option value=''></option></select>
-                                            </div>
-
-											
-											<input type="submit" class="btn" value="Enviar Consulta" ng-class="{'disabled btn-warning' : FormContato.$invalid , 'btn-success' : FormContato.$valid}">
-											
-											
-                                            </div>
-                                            </div>
-
-                                    </div>
+                    <!-- TABELA PESSOA -->
+                    <table class="table table-striped" ng-if="data.datasetName == 'pessoa'">
+                        <tr>
+                            <td>Select</td>
+                            <td>Valor</td>
+                        </tr>
+                        <tr>
+                            <td>Nome Cidade</td>
+                            <td>
+                                <select class="form-control" ng-model="data.where.nome_cidd_c">
+                                    <option value="olinda">Olinda</option>
+                                    <option value="recife">Recife</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sexo</td>
+                            <td>
+                                <select class="form-control" ng-model="data.where.pss_sexo_p">
+                                    <option value="M">M</option>
+                                    <option value="F">F</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
 
 
+                    <!--TABELA ALUNO -->                    
+                    <table class="table table-striped" ng-if="data.datasetName == 'aluno_SI'">
+                        <tr>
+                            <td>Select</td>
+                            <td>Valor</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Nome do Curso
+                            </td>
+                            <td>
+                                <select class="form-control" ng-model="data.where.codg_progm_fomc">
+                                    <option value="-">-</option>
+                                    <option value="311">SISTEMAS DE INFORMAÇÃO</option>
+                                    <option value="45">CIÊNCIA DA COMPUTAÇÃO - CIN</option>                 
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Código do Período Letivo
+                            </td>
+                            <td>
+                                <select class="form-control" ng-model="data.where.codg_perd_letv_sa">
+                                    <option value="2011.1">2014.1</option>
+                                    <option value="2011.2">2014.2</option>
+                                    <option value="2012.1">2012.1</option>
+                                    <option value="2012.2">2012.2</option>
+                                    <option value="2013.1">2013.1</option>
+                                    <option value="2013.2">2013.2</option>
+                                    <option value="2014.1">2014.1</option>
+                                    <option value="2014.2">2014.2</option>
+                                    <option value="2015.1">2015.1</option>
+                                    <option value="2015.2">2015.2</option>
+                                    <option value="2016.1">2016.1</option>
+                                    <option value="2016.2">2016.2</option>
+                                    <option value="2017.1">2017.1</option>
+                                    <option value="2017.2">2017.2</option>
+                                </select>
+                            </td>
+                        </tr>
                         
-                        </div>
-                        </div>
-                        </form>
 
--->
-                   </div>
+                        <tr>
+                            <td>
+                                Ano de admissão
+                            </td>
+                            <td>
+                                <select class="form-control" ng-model="data.where.ano_adms">
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                             <tr>
+                             <td>
+                                Tipo de Situação Acadêmica
+                             </td>
+                            <td>
+                                <select class="form-control" ng-model="data.where.codg_tipo_sitc_acadmc">
+                                    <option value="1">Matriculado</option>
+                                    <option value="17">Desistente</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+
+           <table class="table table-striped" ng-if="data.datasetName == 'aluno_CC'">
+                        <tr>
+                            <td>Select</td>
+                            <td>Valor</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Nome do Curso
+                            </td>
+                            <td>
+                                <select class="form-control" ng-model="data.where.codg_progm_fomc">
+                                    <option value="-">-</option>
+                                    <option value="311">SISTEMAS DE INFORMAÇÃO</option>
+                                    <option value="45">CIÊNCIA DA COMPUTAÇÃO - CIN</option>                 
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Código do Período Letivo
+                            </td>
+                            <td>
+                                <select class="form-control" ng-model="data.where.codg_perd_letv_sa">
+                                    <option value="2011.1">2014.1</option>
+                                    <option value="2011.2">2014.2</option>
+                                    <option value="2012.1">2012.1</option>
+                                    <option value="2012.2">2012.2</option>
+                                    <option value="2013.1">2013.1</option>
+                                    <option value="2013.2">2013.2</option>
+                                    <option value="2014.1">2014.1</option>
+                                    <option value="2014.2">2014.2</option>
+                                    <option value="2015.1">2015.1</option>
+                                    <option value="2015.2">2015.2</option>
+                                    <option value="2016.1">2016.1</option>
+                                    <option value="2016.2">2016.2</option>
+                                    <option value="2017.1">2017.1</option>
+                                    <option value="2017.2">2017.2</option>
+                                </select>
+                            </td>
+                        </tr>
+                        
+
+                        <tr>
+                            <td>
+                                Ano de admissão
+                            </td>
+                            <td>
+                                <select class="form-control" ng-model="data.where.ano_adms">
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                             <tr>
+                             <td>
+                                Tipo de Situação Acadêmica
+                             </td>
+                            <td>
+                                <select class="form-control" ng-model="data.where.codg_tipo_sitc_acadmc">
+                                    <option value="1">Matriculado</option>
+                                    <option value="17">Desistente</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <button ng-show="download.show" ng-click="fazerDownload()"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Download</button>
                </div>
+           </div>
             </div>
     </div>
   </div>

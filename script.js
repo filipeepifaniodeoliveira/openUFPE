@@ -26,6 +26,11 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/indicadores',
       templateUrl: 'views/indicadores.html',
       controller: 'indicadoresCtrl'
+    })
+    .state('gerador', {
+      url: '/gerador',
+      templateUrl: 'views/gerador.html',
+      controller: 'geradorCtrl'
     });
     
     // Utilizando o HTML5 History API

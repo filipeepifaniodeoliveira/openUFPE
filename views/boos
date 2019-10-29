@@ -1,0 +1,176 @@
+<div class="row">
+        <div class="col-lg-12">
+
+        <div class="panel panel-default">
+              <div class="panel-heading">
+                  Gerador de Serial
+              </div>  
+            <div class="panel-body">
+            <div class="row">
+                    <!-- TABELA -->
+                    <table class="table table-striped">
+                      <tr>
+                            <td>Usuário</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">   
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Senha</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+                
+                        <div id="resposta">
+              <td>Resposta do Login</td>
+                        </div>
+
+                    </table>
+                </div>
+            </div>
+        </div>    
+        
+            </div>
+        </div>
+
+        </tr>
+        </tr>
+
+
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  Preenchimento do Conjunto de Dados
+              </div>
+          
+            <div class="panel-body">
+              <div class="row">
+                    <!-- TABELA -->
+                    <table class="table table-striped">
+                        <!--
+                        <tr>
+                            <td>Select</td>
+                            <td>Valor</td>
+                        </tr>
+                        -->
+                        <tr>
+                            <td>Código</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">   
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>DatasetTitle</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CollectionIdColumnName</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>SQL</td>
+                            <td>
+                                <textarea class="form-control" rows="10" id="comment"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+            </div>  
+
+            <div class="row">
+
+                    <!-- TABELA -->
+                    <table class="table table-striped">
+                       
+                        <tr>
+                            <td>UpdateFrequency</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">   
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Creator</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>keywords</td>
+                            <td>
+                               <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Publisher</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>ContactPoint</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Period</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>SpacialCoverage</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Theme</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Language</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>DateTimeFormats</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Description</td>
+                            <td>
+                              <input type="text" class="form-control" id="usr">
+                            </td>
+                        </tr>
+
+
+
+                    </table>
+                </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+

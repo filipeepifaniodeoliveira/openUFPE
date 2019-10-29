@@ -1,21 +1,19 @@
 
-<div class="row">
-    <div class="col-lg-12">
-<div class="wrapper">
-  <div class="content-wrapper">
-    <section class="content-header">
-              <h3>Downloads</h3>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#/"><i class="fa fa-home"></i>Início</a></li>
-        <li class="active">Downloads</li>
-        <li><a><button ng-click="pegarDadosPessoa()">pegar dados</button></a></li>
+<div class="row" ng-init="pegarDados()">
+  <div class="col-lg-12">
+    <div class="wrapper">
+      <div class="content-wrapper" ng-controller="downloadsCtrl">
+    
+    
+<div class="col-lg-12">
+  <h3 class="page-header">Metadados</h3>
+</div>
 
-      </ol>
-    </section>
-    <div ng-repeat="post in posts">
-    <section class="content">
-      <div id="dataset-description">
+  
+  <!--Pessoa-->
+  <div ng-repeat="post in posts">
+  <section class="content">
+  <div id="dataset-description">
         <h2>Descrição do Conjunto de Dados</h2>
         <table class="human-readable-example">
           <tbody>
@@ -61,9 +59,207 @@
             </tr>
           </tbody>
         </table>
-      </div>
+  </div>
+<!--
+  <div id="dataset-distributions">
+        <h2>Formatos dos Conjuntos de Dados</h2>
+        <h3>RDF</h3>
+        <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <td>Título</td>
+              <td>RDF do Conjunto de Dados - 18-07-2016</td>
+            </tr>
+            <tr>
+              <td>Descrição</td>
+              <td>Arquivo RDF do Conjunto de Dados </td>
+            </tr>
+            <tr>
+              <td>Tipo de Arquivo</td>
+              <td>RDF/XML</td>
+            </tr>
+            <tr>
+              <td>Licença</td>
+              <td>  <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+              </td>
+            </tr>
+            <tr>
+              <td>Data de Publicação</td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>Última modificação</td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>Download URL</td>
+              <td><a></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </div> 
 
-      <div id="dataset-distributions">
+
+  <div id="dataset-structural-metadata">
+        <h4>Estrutura do RDF</h4>
+               <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <th>Campo</th>
+              <th>Título</th>
+              <th>Descrição</th>
+              <th>Tipo de dado</th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>foaf:name</td>
+              <td>Nome</td>
+              <td>O título do evento</td>
+              <td>string</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+-->
+  <div id="dataset-versioning-information">
+        <h2>Histórico de Versão</h2>
+        <table class="human-readable-example">
+          <thead>
+            <tr>
+              <th>Versão</th>
+              <th>Data de Emissão</th>
+              <th>URI</th>
+              <th>Histórico de Mudança</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="td-version">1.0</td>
+              <td>17-01-2017</td>
+              <td>http://localhost:8080/find/pessoa/</td>
+              <td>Criação dos Conjuntos de dados</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>   
+  </section>
+  </div>  
+  <!-- -->
+
+
+  <!-- Alunos -->  
+  <div ng-repeat="post in posts_aluno">
+  <section class="content">
+  <div id="dataset-description">
+        <h2>Descrição do Conjunto de Dados</h2>
+        <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <td>Título</td>
+              <td>Aluno</td>
+            </tr>
+            <tr>
+              <td>URI</td>
+              <td>http://localhost:8080/find/aluno</td>
+            </tr>
+            <tr>
+              <td>Palavras-chave</td>
+              <td><span>{{post.keywords}}</span></td>
+            </tr>
+          </tbody>
+          <tbody id="provenance-info">
+            <tr>
+              <td>Publication date</td>
+              <td><span>2017</span></td>
+            </tr>
+            <tr>
+              <td>Criadores</td>
+              <td><span>{{post.creator}}</span>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>Frequência de Atualização</td>
+              <td>Every Hour</td>
+            </tr>
+            <tr>
+              <td>Tema</td>
+                <td>{{post.theme}}</td>
+            </tr>
+            <tr id="locale-parameters">
+              <td>Linguagem</td>
+              <td>{{post.language}}</td>
+            </tr>
+            <tr>
+              <td>Versão Atual</td>
+              <td>{{ post.last_version }}</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+
+<!--
+  <div id="dataset-distributions">
         <h2>Formatos dos Conjuntos de Dados</h2>
         <h3>RDF</h3>
         <table class="human-readable-example">
@@ -100,11 +296,11 @@
             </tr>
           </tbody>
         </table>
-      </div>
+  </div> 
 
-      <div id="dataset-structural-metadata">
+
+  <div id="dataset-structural-metadata">
         <h4>Estrutura do RDF</h4>
-        <!--<p>Schema of the dataset "Bus stops of MyCity".</p> -->
         <table class="human-readable-example">
           <tbody>
             <tr>
@@ -179,12 +375,11 @@
               <td></td>
               <td></td>
             </tr>
-
           </tbody>
         </table>
-      </div>
-
-      <div id="dataset-versioning-information">
+  </div>
+-->
+  <div id="dataset-versioning-information">
         <h2>Histórico de Versão</h2>
         <table class="human-readable-example">
           <thead>
@@ -198,15 +393,818 @@
           <tbody>
             <tr>
               <td id="td-version">1.0</td>
+              <td>17-01-2017</td>
+              <td>http://localhost:8080/find/alunos/</td>
+              <td>Criação dos Conjuntos de dados</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>   
+  </section>
+  </div>
+
+  <!-- -->
+
+
+  <!-- Docentes -->  
+  <div ng-repeat="post in posts_docentes">
+  <section class="content">
+  <div id="dataset-description">
+        <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <td>Título</td>
+              <td>Docentes</td>
+            </tr>
+            <tr>
+              <td>URI</td>
+              <td>http://localhost:8080/find/docentes</td>
+            </tr>
+            <tr>
+              <td>Palavras-chave</td>
+              <td><span>{{ post.keywords }}</span></td>
+            </tr>
+          </tbody>
+          <tbody id="provenance-info">
+            <tr>
+              <td>Publication date</td>
+              <td><span>2017</span></td>
+            </tr>
+            <tr>
+              <td>Criadores</td>
+              <td><span>{{ post.creator }}</span>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>Frequência de Atualização</td>
+              <td>Every Hour</td>
+            </tr>
+            <tr>
+              <td>Tema</td>
+                <td>{{ post.theme }}</td>
+            </tr>
+            <tr id="locale-parameters">
+              <td>Linguagem</td>
+              <td>{{ post.language }}</td>
+            </tr>
+            <tr>
+              <td>Versão Atual</td>
+              <td>{{ post.last_version }}</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+
+<!--
+  <div id="dataset-distributions">
+        <h2>Formatos dos Conjuntos de Dados</h2>
+        <h3>RDF</h3>
+        <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <td>Título</td>
+              <td>RDF do Conjunto de Dados - 18-07-2016</td>
+            </tr>
+            <tr>
+              <td>Descrição</td>
+              <td>Arquivo RDF do Conjunto de Dados </td>
+            </tr>
+            <tr>
+              <td>Tipo de Arquivo</td>
+              <td>RDF/XML</td>
+            </tr>
+            <tr>
+              <td>Licença</td>
+              <td> <a>  </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Data de Publicação</td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>Última modificação</td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>Download URL</td>
+              <td><a></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </div> 
+
+
+  <div id="dataset-structural-metadata">
+        <h4>Estrutura do RDF</h4>
+    
+        <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <th>Campo</th>
+              <th>Título</th>
+              <th>Descrição</th>
+              <th>Tipo de dado</th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>foaf:name</td>
+              <td>Nome</td>
+              <td>O título do evento</td>
+              <td>string</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
           </tbody>
         </table>
-      </div>
-      <h2>Arquivos para Download</h2>
+  </div>
+-->
+  <div id="dataset-versioning-information">
+        <h2>Histórico de Versão</h2>
+        <table class="human-readable-example">
+          <thead>
+            <tr>
+              <th>Versão</th>
+              <th>Data de Emissão</th>
+              <th>URI</th>
+              <th>Histórico de Mudança</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="td-version">1.0</td>
+              <td>17-01-2017</td>
+              <td>http://localhost:8080/find/docentes/</td>
+              <td>Criação dos Conjuntos de dados</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>   
+  </section>
+  </div>
 
+  <!---->
+
+  <!-- orgao -->  
+  <div ng-repeat="post in posts_orgao">
+  <section class="content">
+  <div id="dataset-description">
+        <h2>Descrição do Conjunto de Dados</h2>
+        <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <td>Título</td>
+              <td>Orgao</td>
+            </tr>
+            <tr>
+              <td>URI</td>
+              <td>http://localhost:8080/find/orgao</td>
+            </tr>
+            <tr>
+              <td>Palavras-chave</td>
+              <td><span>{{ post.keywords }}</span></td>
+            </tr>
+          </tbody>
+          <tbody id="provenance-info">
+            <tr>
+              <td>Publication date</td>
+              <td><span>2017</span></td>
+            </tr>
+            <tr>
+              <td>Criadores</td>
+              <td><span>{{ post.creator }}</span>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>Frequência de Atualização</td>
+              <td>Every Hour</td>
+            </tr>
+            <tr>
+              <td>Tema</td>
+                <td>{{ post.theme }}</td>
+            </tr>
+            <tr id="locale-parameters">
+              <td>Linguagem</td>
+              <td>{{ post.language }}</td>
+            </tr>
+            <tr>
+              <td>Versão Atual</td>
+              <td>{{ post.last_version }}</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+
+
+<!--
+  <div id="dataset-distributions">
+        <h2>Formatos dos Conjuntos de Dados</h2>
+        <h3>RDF</h3>
+        <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <td>Título</td>
+              <td>RDF do Conjunto de Dados - 18-07-2016</td>
+            </tr>
+            <tr>
+              <td>Descrição</td>
+              <td>Arquivo RDF do Conjunto de Dados </td>
+            </tr>
+            <tr>
+              <td>Tipo de Arquivo</td>
+              <td>RDF/XML</td>
+            </tr>
+            <tr>
+              <td>Licença</td>
+              <td> <a>  </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Data de Publicação</td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>Última modificação</td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>Download URL</td>
+              <td><a></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </div> 
+
+
+  <div id="dataset-structural-metadata">
+        <h4>Estrutura do RDF</h4>
+   
+        <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <th>Campo</th>
+              <th>Título</th>
+              <th>Descrição</th>
+              <th>Tipo de dado</th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>foaf:name</td>
+              <td>Nome</td>
+              <td>O título do evento</td>
+              <td>string</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+-->
+  <div id="dataset-versioning-information">
+        <h2>Histórico de Versão</h2>
+        <table class="human-readable-example">
+          <thead>
+            <tr>
+              <th>Versão</th>
+              <th>Data de Emissão</th>
+              <th>URI</th>
+              <th>Histórico de Mudança</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="td-version">1.0</td>
+              <td>17-01-2017</td>
+              <td>http://localhost:8080/find/pessoa/</td>
+              <td>Criação dos Conjuntos de dados</td> 
+            </tr>
+          </tbody>
+        </table>
+  </div>   
+  </section>
+  </div>
+  <!---->
+
+  <!-- Turma -->  
+  <div ng-repeat="post in posts_turma">
+  <section class="content">
+  <div id="dataset-description">
+        <h2>Descrição do Conjunto de Dados</h2>
+        <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <td>Título</td>
+              <td>Turma</td>
+            </tr>
+            <tr>
+              <td>URI</td>
+              <td>http://localhost:8080/find/turma</td>
+            </tr>
+            <tr>
+              <td>Palavras-chave</td>
+              <td><span>{{ post.keywords }}</span></td>
+            </tr>
+          </tbody>
+          <tbody id="provenance-info">
+            <tr>
+              <td>Publication date</td>
+              <td><span>2017</span></td>
+            </tr>
+            <tr>
+              <td>Criadores</td>
+              <td><span>{{ post.creator }}</span>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>Frequência de Atualização</td>
+              <td>Every Hour</td>
+            </tr>
+            <tr>
+              <td>Tema</td>
+                <td>{{ post.theme }}</td>
+            </tr>
+            <tr id="locale-parameters">
+              <td>Linguagem</td>
+              <td>{{ post.language }}</td>
+            </tr>
+            <tr>
+              <td>Versão Atual</td>
+              <td>{{ post.last_version }}</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+
+<!--
+  <div id="dataset-distributions">
+        <h2>Formatos dos Conjuntos de Dados</h2>
+        <h3>RDF</h3>
+        <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <td>Título</td>
+              <td>RDF do Conjunto de Dados - 18-07-2016</td>
+            </tr>
+            <tr>
+              <td>Descrição</td>
+              <td>Arquivo RDF do Conjunto de Dados </td>
+            </tr>
+            <tr>
+              <td>Tipo de Arquivo</td>
+              <td>RDF/XML</td>
+            </tr>
+            <tr>
+              <td>Licença</td>
+              <td> <a>  </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Data de Publicação</td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>Última modificação</td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>Download URL</td>
+              <td><a></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </div> 
+
+
+  <div id="dataset-structural-metadata">
+        <h4>Estrutura do RDF</h4>
+   
+        <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <th>Campo</th>
+              <th>Título</th>
+              <th>Descrição</th>
+              <th>Tipo de dado</th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>foaf:name</td>
+              <td>Nome</td>
+              <td>O título do evento</td>
+              <td>string</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+-->
+
+  <div id="dataset-versioning-information">
+        <h2>Histórico de Versão</h2>
+        <table class="human-readable-example">
+          <thead>
+            <tr>
+              <th>Versão</th>
+              <th>Data de Emissão</th>
+              <th>URI</th>
+              <th>Histórico de Mudança</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+             <td id="td-version">1.0</td>
+              <td>17-01-2017</td>
+              <td>http://localhost:8080/find/pessoa/</td>
+              <td>Criação dos Conjuntos de dados</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>   
+  </section>
+  </div>
+
+  <!--  -->
+
+  <!-- Curso -->  
+  <div ng-repeat="post in posts_curso">
+  <section class="content">
+  <div id="dataset-description">
+        <h2>Descrição do Conjunto de Dados</h2>
+        
+<table class="human-readable-example">
+          <tbody>
+            <tr>
+              <td>Título</td>
+              <td>Curso</td>
+            </tr>
+            <tr>
+              <td>URI</td>
+              <td>http://localhost:8080/find/curso</td>
+            </tr>
+            <tr>
+              <td>Palavras-chave</td>
+              <td><span>{{ post.keywords }}</span></td>
+            </tr>
+          </tbody>
+          <tbody id="provenance-info">
+            <tr>
+              <td>Publication date</td>
+              <td><span>2017</span></td>
+            </tr>
+            <tr>
+              <td>Criadores</td>
+              <td><span>{{ post.creator }}</span>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>Frequência de Atualização</td>
+              <td>Every Hour</td>
+            </tr>
+            <tr>
+              <td>Tema</td>
+                <td>{{ post.theme }}</td>
+            </tr>
+            <tr id="locale-parameters">
+              <td>Linguagem</td>
+              <td>{{ post.language }}</td>
+            </tr>
+            <tr>
+              <td>Versão Atual</td>
+              <td>{{ post.last_version }}</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+
+<!--
+  <div id="dataset-distributions">
+        <h2>Formatos dos Conjuntos de Dados</h2>
+        <h3>RDF</h3>
+        <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <td>Título</td>
+              <td>RDF do Conjunto de Dados - 18-07-2016</td>
+            </tr>
+            <tr>
+              <td>Descrição</td>
+              <td>Arquivo RDF do Conjunto de Dados </td>
+            </tr>
+            <tr>
+              <td>Tipo de Arquivo</td>
+              <td>RDF/XML</td>
+            </tr>
+            <tr>
+              <td>Licença</td>
+              <td> <a>  </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Data de Publicação</td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>Última modificação</td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>Download URL</td>
+              <td><a></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </div> 
+
+
+
+  <div id="dataset-structural-metadata">
+        <h4>Estrutura do RDF</h4>
+        <table class="human-readable-example">
+          <tbody>
+            <tr>
+              <th>Campo</th>
+              <th>Título</th>
+              <th>Descrição</th>
+              <th>Tipo de dado</th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>foaf:name</td>
+              <td>Nome</td>
+              <td>O título do evento</td>
+              <td>string</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+-->
+
+  <div id="dataset-versioning-information">
+        <h2>Histórico de Versão</h2>
+        <table class="human-readable-example">
+          <thead>
+            <tr>
+              <th>Versão</th>
+              <th>Data de Emissão</th>
+              <th>URI</th>
+              <th>Histórico de Mudança</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+             <td id="td-version">1.0</td>
+              <td>17-01-2017</td>
+              <td>http://localhost:8080/find/curso/</td>
+              <td>Criação dos Conjuntos de dados</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>   
+  </section>
+  </div>
+  
+      <!--Sessão Baixa aqui-->
+      <div>
+      <h2>Arquivos para Download</h2>
       <table class="human-readable-example">
         <tbody>
           <tr>
@@ -217,61 +1215,136 @@
             <th>Data de publicação</th>
           </tr>
           <tr>
-            <td><a></a></td>
-            <td></td>
+            <td><a href="localhost:8080/find/aluno/format/xml/download/">Aluno.xml</a></td>
+            <td>Dataset Aluno em xml</td>
             <td>RDF/XML</td>
-            <td> <a>  </a></td>
-            <td></td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
           </tr>
           <tr>
-            <td><a></a></td>
-            <td></td>
+            <td><a href="localhost:8080/find/aluno/format/rdf/download/">Aluno.rdf</a></td>
+            <td>Dataset Aluno em rdf</td>
             <td>RDF/XML</td>
-            <td> <a> </a></td>
-            <td></td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
           </tr>
           <tr>
-            <td><a></a></td>
-            <td></td>
+            <td><a href="localhost:8080/find/aluno_SI/format/xml/download/">Aluno_SI.xml</a></td>
+            <td>Dataset Alunos de SI em xml</td>
             <td>RDF/XML</td>
-            <td> <a>  </a></td>
-            <td></td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
           </tr>
           <tr>
-            <td><a></a></td>
-            <td></td>
+            <td><a href="localhost:8080/find/aluno_SI/format/rdf/download/">Aluno_SI.rdf></a></td>
+            <td>Dataset Alunos de SI em rdf</td>
             <td>RDF/XML</td>
-            <td> <a>  </a></td>
-            <td></td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
           </tr>
           <tr>
-            <td><a></a></td>
-            <td></td>
+            <td><a href="localhost:8080/find/aluno_02/format/xml/download/">Aluno_CC.xml</a></td>
+            <td>Dataset Alunos de CC em xml</td>
             <td>RDF/XML</td>
-            <td> <a>  </a></td>
-            <td></td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
           </tr>
           <tr>
-            <td><a></a></td>
-            <td></td>
+            <td><a href="localhost:8080/find/aluno_02/format/rdf/download/">Aluno_CC.rdf</a></td>
+            <td>Dataset Alunos de CC em rdf</td>
             <td>RDF/XML</td>
-            <td> <a>  </a></td>
-            <td></td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
           </tr>
           <tr>
-            <td><a></a></td>
-            <td></td>
+            <td><a href="localhost:8080/find/turma/format/xml/download/">Turma.xml</a></td>
+            <td>Dataset Turma em xml</td>
             <td>RDF/XML</td>
-            <td> <a>  </a></td>
-            <td></td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
+          </tr>
+          <tr>
+            <td><a href="localhost:8080/find/turma/format/rdf/download/">Turma.rdf</a></td>
+            <td>Dataset Turma em rdf</td>
+            <td>RDF/XML</td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
+          </tr>
+          <tr>
+            <td><a href="localhost:8080/find/curso/format/xml/download/">Curso.rdf</a></td>
+            <td>Dataset Curso em xml</td>
+            <td>RDF/XML</td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
+          </tr>
+          <tr>
+            <td><a href="localhost:8080/find/curso/format/rdf/download/">Curso.rdf</a></td>
+            <td>Dataset Curso em rdf</td>
+            <td>RDF/XML</td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
+          </tr>
+          <tr>
+            <td><a href="localhost:8080/find/pessoa/format/xml/download/">Pessoa.xml</a></td>
+            <td>Dataset Pessoa em xml</td>
+            <td>RDF/XML</td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
+          </tr>
+          <tr>
+            <td><a href="localhost:8080/find/pessoa/format/rdf/download/">Pessoa.rdf</a></td>
+            <td>Dataset Pessoa em rdf</td>
+            <td>RDF/XML</td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
+          </tr>
+          <tr>
+            <td><a href="localhost:8080/find/docente/format/xml/download/">Docente.xml</a></td>
+            <td>Dataset Docente em xml</td>
+            <td>RDF/XML</td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
+          </tr>
+          <tr>
+            <td><a href="localhost:8080/find/docente/format/rdf/download/">Docente.rdf</a></td>
+            <td>Dataset Docente em rdf</td>
+            <td>RDF/XML</td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
+          </tr>
+          <tr>
+            <td><a href="localhost:8080/find/vinculo/format/xml/download/">Vinculo.xml</a></td>
+            <td>Dataset Vinculo em xml</td>
+            <td>RDF/XML</td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
+          </tr>
+          <tr>
+            <td><a href="localhost:8080/find/vinculo/format/rdf/download/">Vinculo.rdf</a></td>
+            <td>Dataset Vinculo em rdf</td>
+            <td>RDF/XML</td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
+          </tr>
+          <tr>
+            <td><a href="localhost:8080/find/orgao/format/xml/download/">Orgao.xml</a></td>
+            <td>Dataset Orgao em xml</td>
+            <td>RDF/XML</td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
+          </tr>
+          <tr>
+            <td><a href="localhost:8080/find/vinculo/format/orgao/download/">Orgao.rdf</a></td>
+            <td>Dataset Orgao em rdf</td>
+            <td>RDF/XML</td>
+            <td> <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0 </a></td>
+            <td>16-01-2017</td>
           </tr>
         </tbody>
       </table>
-    </section>
-</div>
+      </div>
+
+      </div>
+    </div> 
   </div>
 </div>
-
-  </div>
-
-    </div>

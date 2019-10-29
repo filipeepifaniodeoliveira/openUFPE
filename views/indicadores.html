@@ -1,19 +1,54 @@
-<div class="row">
-    <div class="col-lg-6 col-sm-12" id="doughnut-chart" ng-controller="indicadoresCtrl">
-        <div class="panel panel-default">
-            <div class="panel-heading">CHART</div>
-            <div class="panel-body">
-          	<canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series"></canvas>
+<div class="col-lg-12">
+    <h3 class="page-header">Indicadores</h3>
+</div>
 
+<div class="vuadem">      
+
+<div class="row">
+    <div class="col-lg-6 col-sm-6" id="doughnut-chart" ng-controller="indicadoresCtrl">
+        <div class="row" ng-init="pegarDados()">
+        <div class="panel panel-default">
+            <div class="panel-heading">Desistências no Curso de Sistemas de Informação</div>
+            <div class="panel-body">
+          	
+            <div class="col-lg-12">
+          	<canvas id="bar_si" class="chart chart-bar" chart-data="bar_si.data" chart-labels="bar_si.labels" chart-series="bar_si.series"></canvas>
+
+            <div class="panel-body">
+            <h3>Descrição</h3>
+            <p> Este gráfico representa que dos alunos ingressantes no curso de sistemas de informação no ano de 2011, apenas 3 abandonara o curso, dos alunos ingressantes em 2013, 2 abandonaram o curso e apenas 1 dos ingressantes em 2014 abandonou o curso.</p>
+            </div>    
+
+            </div>
             </div>
         </div>
     </div>
-
-
-<div ng-repeat="indicador in indicadores">
-	{{ indicador.nome_orgao }}
+</div>
 </div>
 
-<button ng-click="pegarDados()">pegar dados</button>
+
+
+ <div class="row">
+    <div class="col-lg-6 col-sm-6" id="doughnut-chart" ng-controller="indicadoresCtrl">
+        <div class="row" ng-init="pegarDados()">
+        <div class="panel panel-default">
+            <div class="panel-heading">Desistências no Curso de Ciência da Computação</div>
+            <div class="panel-body">
+            <div class="col-lg-12">
+          
+          	<canvas id="bar_cc" class="chart chart-bar" chart-data="bar_cc.data" chart-labels="bar_cc.labels" chart-series="bar_cc.series"></canvas>
+
+            <div class="panel-body">
+            <h3>Descrição</h3>
+            <p> Este gráfico representa que dos alunos ingressantes no curso de sistemas de informação no ano de 2011, apenas 2 abandonara o curso e dos alunos ingressantes em 2012, apenas 1 abandonou o curso.</p>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>   
+</div>
+</div>
+
+</div>
 
 
